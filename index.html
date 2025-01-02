@@ -17,46 +17,73 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <!-- script JavaScript -->
-    <script refer src="https://mrpcvs.github.io/Charith/script.js"></script>
+    <script defer src="https://mrpcvs.github.io/Charith/script.js"></script>
 
-    <title>Document</title>
-
+    <title>Portfolio - Software Engineer</title>
 </head>
-<body class="bg-dark container mb-3">
-    <div class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
-            <a class="navbar-brand" href="#">MyLogo</a> 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
-                <span class="navbar-toggler-icon"></span> 
-            </button> <div class="collapse navbar-collapse" id="navbarNav"> 
-                <ul class="navbar-nav ml-auto"> 
-                    <li class="nav-item"> 
-                        <a class="nav-link" href="#home">Home</a> 
-                    </li> <li class="nav-item"> 
-                        <a class="nav-link" href="#services">Services</a> 
-                    </li> <li class="nav-item"> 
-                        <a class="nav-link" href="#about">About</a> 
-                    </li> <li class="nav-item"> 
-                        <a class="nav-link" href="#contact">Contact</a> 
-                    </li> 
-                </ul> 
-            </div> 
-        </nav>
-    </div>
- 
-    <div class="content">
-        <div class="row mt-3 " style="padding-left: 0px;  padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
-            <div class="col-md-4 rounded-3" style="padding-left: 0px;  padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
-                <img src="https://mrpcvs.github.io/Charith/c.png" class="img-fluid" alt="image">
-            </div>
-            <div class="rounded-3   content-justify-center col-md-8">
-                <p class="text-white text-center fs-3 ">Dynamic software engineering student with hands-on experience in HTML, CSS, Java, PHP, JavaScript, Node.js, and 
-                MySQL. Proven project management skills and adept at implementing digital workflows. Conducted impactful 
-                nationwide training and research on e-waste management's environmental sustainability. Pursuing a bachelor’s in 
-                software engineering at London Metropolitan University, UK.</p>
+<body class="bg-dark">
+
+    <!-- Responsive Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://mrpcvs.github.io/Charith/c.png" alt="Logo" width="35" height="30" radius class="d-inline-block align-text-top border border-light rounded-circle ">
+                Charith's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
+    </nav>
+
+    <!-- Sections -->
+    <section id="home" class="text-white text-center py-5">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Dynamic software engineering student with expertise in various modern technologies.</p>
+    </section>
+
+    <section id="about" class="text-white text-center py-5">
+        <h2>About Me</h2>
+        <p>A brief description about you goes here.</p>
+    </section>
+
+    <section id="projects" class="text-white text-center py-5">
+        <h2>Projects</h2>
+        <p>Showcase of recent projects goes here.</p>
+    </section>
+
+    <section id="contact" class="text-white text-center py-5">
+        <h2>Contact</h2>
+        <p>Ways to get in touch with you go here.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-white bg-black py-1">
+        <p>&copy; 2025 Charith. All rights reserved.</p>
+    </footer>
+
+    <!-- GSAP Animations -->
+    <script>
+        gsap.from(".navbar-brand", { opacity: 0, y: -50, duration: 1 });
+        gsap.from(".nav-link", { opacity: 0, x: -50, duration: 0.5, stagger: 0.2 });
+        gsap.from("section", { opacity: 0, y: 100, duration: 1, stagger: 0.3 });
+    </script>
 
 </body>
 </html>
