@@ -19,6 +19,8 @@
     <!-- script JavaScript -->
     <script defer src="https://mrpcvs.github.io/Charith/script.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+
     <title>Portfolio - Software Engineer</title>
     
 </head>
@@ -85,6 +87,8 @@
 
     <!-- GSAP Animations -->
     <script>
+        gsap.registerPlugin(TextPlugin); // Register the TextPlugin
+        
         let navbar = gsap.from(".navbar-brand", { opacity: 0, y: -50, duration: 1 })
         let link = gsap.from(".nav-link", { opacity: 0, x: -50, duration: 0.5, stagger: 0.2 })
         let section = gsap.from("section", { opacity: 0, y: 100, duration: 1, stagger: 0.3 })
