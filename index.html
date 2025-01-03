@@ -55,8 +55,8 @@
 
     <!-- Sections -->
     <section id="home" class="text-white text-center py-5">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Dynamic software engineering student with expertise in various modern technologies.</p>
+        <h1 class="text">Hi, I'm Charith Samarathunga</h1>
+        <p>Dynamic software engineer with expertise in various modern technologies.</p>
     </section>
 
     <section id="about" class="text-white text-center py-5">
@@ -85,6 +85,7 @@
         gsap.from(".nav-link", { opacity: 0, x: -50, duration: 0.5, stagger: 0.2 });
         gsap.from("section", { opacity: 0, y: 100, duration: 1, stagger: 0.3 });
         gsap.to(".image",{duration: 7,rotation:720, repeat: 0, ease: "bounce", backgroundColor: "#ffffff", boxShadow: '0 0 20px 5px rgba(255, 255, 255, 0.8)'});
+        typewriterEffect("This is text that will be typewritten!", 50);
     </script>
 
 </body>
