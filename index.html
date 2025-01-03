@@ -62,7 +62,7 @@
                 <img src="https://mrpcvs.github.io/Charith/c.png" alt="Profile Picture" width="300" height="300" class="img-thumbnail rounded mx-auto d-block py-0 px-0">
             </div>
             <div class="col-xs-12 col-xl-9 py-4 ">
-                <section id="home" class="text-white text-center py-5">
+                <section id="home" class="text-white text-center py-5 water-drop-section">
                     <h2 class="fs-1 fw-bold">
                         <span class="hi">Hi, I'm</span>
                         <span class="text"></span>
@@ -74,13 +74,18 @@
                         
                         Currently pursuing a bachelor’s degree in Software Engineering at London Metropolitan University, UK, I’m eager to keep growing and using my skills to create meaningful change in the tech world.
                         
-                        </p>
+                    </p>
+                    <div class="water-drop"></div>
                 </section>
             </div>
         </div>
     </div>
 
-    <section id="about" class="text-white text-center py-5">
+    <div class="text-center">
+        <button id="toggleButton" class="rounded-pill">Education</button>
+    </div>
+
+    <section id="education" class="text-white text-center py-5" style="display: none;">
         <h2>About Me</h2>
         <p>A brief description about you goes here.</p>
     </section>
@@ -120,6 +125,20 @@
             let tl = gsap.timeline({repeat: 1, yoyo: true, repeatDelay: 2})
             tl.to('.text',{duration: 2, text: word})
             masterTl.add(tl)
+        })
+
+        const toggleButton = document.getElementById('toggleButton')
+        const education = document.getElementById('education')
+
+        // Add event listener to the button
+        toggleButton.addEventListener('click', () => {
+            if (education.style.display === "none" || education.style.display === "") {
+                education.style.display = "block";
+                toggleButton.textContent = "Hide Education"; // Update button text
+            } else {
+                education.style.display = "none";
+                toggleButton.textContent = "Show Education"; // Update button text
+            }
         })
         
     </script>
