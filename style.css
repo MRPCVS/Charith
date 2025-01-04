@@ -80,7 +80,7 @@ main.row{
 	width: 16px;
 	height: 16px;
 	border-radius: 50%;
-	right: calc(100% + 22px);
+	right: calc(100% + 12px);
 	top: 0;
 	background-color: #11a372;
 	border: 2px solid white;
