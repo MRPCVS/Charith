@@ -211,7 +211,7 @@
         const experience = document.getElementById('experience')
 
         // Add event listener to the button
-        toggleButton.addEventListener('click', () => {
+        toggleButton1.addEventListener('click', () => {
             if (experience.style.display === "none" || experience.style.display === "") {
                 // If hidden, display and animate it
                 experience.style.display = "block";// Ensure it's visible
@@ -220,7 +220,7 @@
             { opacity: 0, y: 100 }, // Initial state
             { opacity: 1, y: 0, duration: 1, ease: "power2.out" } // Final state
         );
-                toggleButton.textContent = "hide my experience"; // Update button text
+                toggleButton1.textContent = "hide my experience"; // Update button text
             } else {// Animate it out and hide after animation
         gsap.to(experience, {
             opacity: 0,
@@ -231,7 +231,7 @@
                 experience.style.display = "none"; // Hide after animation
             }
         });
-        toggleButton.textContent = "see my experience"; // Update button text
+        toggleButton1.textContent = "see my experience"; // Update button text
             }
         })
         
