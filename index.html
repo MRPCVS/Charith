@@ -75,12 +75,12 @@
                         Currently pursuing a bachelor’s degree in Software Engineering at London Metropolitan University, UK, I’m eager to keep growing and using my skills to create meaningful change in the tech world.
                         
                     </p>
-                    <div class="row pb-5">
+                    <div class="row ">
                         <div class="text-center col-6 ">
                             <button id="toggleButton" class="educations" >see my education</button>
                         </div>
                         <div class="text-center col-6">
-                            <button id="toggleButton2" class="experiences" >see my experience</button>
+                            <button id="toggleButton2" class="experience" >see my experience</button>
                         </div>
                     </div>
                 </section>
@@ -114,7 +114,7 @@
     </section>
 
     
-    <section id="experience" class="text-white text-center col align-self-top experience" style="display: none;">
+    <section id="experience" class="text-white text-center col align-self-center ">
         <header class="title">
             <h2>Experience</h2>
         </header>
@@ -163,8 +163,7 @@
         let section = gsap.from("section", { opacity: 0, y: 100, duration: 1, stagger: 0.3, onComplete:()=>masterTl.play() })
         let image = gsap.to(".image",{duration: 7,rotation:720, ease: "bounce", backgroundColor: "#ffffff", boxShadow: '0 0 20px 5px rgba(255, 255, 255, 0.8)'})
         let thumbnail = gsap.to(".img-thumbnail",{opacity: 1, y: 50,repeat: -1, yoyo: true, duration: 2, ease: "bounce",  boxShadow: '0 0 20px 5px rgba(255, 255, 255, 0.8)'})
-        let educations = gsap.to(".educations",{ opacity: 1, y: 100, duration: 1, stagger: 0.3 })
-        let experiences = gsap.to(".experiences",{ opacity: 1, y: 100, duration: 1, stagger: 0.3 })
+        let educations = gsap.to(".education",{ opacity: 0, y: 100, duration: 1, stagger: 0.3 })
         const words = ["Charith Samarathunga","A Software Engineer"]
 
         let cursor = gsap.to('.cursor', {opacity: 0, ease: "power2.inOut", repeat: -1})
@@ -204,37 +203,10 @@
         });
         toggleButton.textContent = "see my education"; // Update button text
             }
-        });
+        })
 
 
-        // Select the button and the experience section
-        const toggleButton2 = document.getElementById('toggleButton')
-        const experience = document.getElementById('experience')
-
-        // Add event listener to the button
-        toggleButton2.addEventListener('click', () => {
-            if (experience.style.display === "none" || experience.style.display === "") {
-                // If hidden, display and animate it
-                experience.style.display = "block";// Ensure it's visible
-                gsap.fromTo(
-            experience, 
-            { opacity: 0, y: 100 }, // Initial state
-            { opacity: 1, y: 0, duration: 1, ease: "power2.out" } // Final state
-        );
-                toggleButton2.textContent = "hide my experience"; // Update button text
-            } else {// Animate it out and hide after animation
-        gsap.to(experience, {
-            opacity: 0,
-            y: 100,
-            duration: 1,
-            ease: "power2.in",
-            onComplete: () => {
-                experience.style.display = "none"; // Hide after animation
-            }
-        });
-        toggleButton2.textContent = "see my experience"; // Update button text
-            }
-        });
+        
         
     </script>
 
