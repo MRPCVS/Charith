@@ -114,7 +114,7 @@
     </section>
 
     
-    <section id="experience" class="text-white text-center col align-self-center experience" style="display: none;">
+    <section id="experience" class="text-white text-center col align-self-top experience" style="display: none;">
         <header class="title">
             <h2>Experience</h2>
         </header>
@@ -208,11 +208,11 @@
 
 
         // Select the button and the education section
-        const toggleButton1 = document.getElementById('toggleButton')
+        const toggleButton2 = document.getElementById('toggleButton')
         const experience = document.getElementById('experience')
 
         // Add event listener to the button
-        toggleButton1.addEventListener('click', () => {
+        toggleButton2.addEventListener('click', () => {
             if (experience.style.display === "none" || experience.style.display === "") {
                 // If hidden, display and animate it
                 experience.style.display = "block";// Ensure it's visible
@@ -221,7 +221,7 @@
             { opacity: 0, y: 100 }, // Initial state
             { opacity: 1, y: 0, duration: 1, ease: "power2.out" } // Final state
         );
-                toggleButton1.textContent = "hide my experience"; // Update button text
+                toggleButton2.textContent = "hide my experience"; // Update button text
             } else {// Animate it out and hide after animation
         gsap.to(experience, {
             opacity: 0,
@@ -232,7 +232,7 @@
                 experience.style.display = "none"; // Hide after animation
             }
         });
-        toggleButton1.textContent = "see my experience"; // Update button text
+        toggleButton2.textContent = "see my experience"; // Update button text
             }
         })
         
