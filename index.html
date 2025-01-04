@@ -163,8 +163,8 @@
         let section = gsap.from("section", { opacity: 0, y: 100, duration: 1, stagger: 0.3, onComplete:()=>masterTl.play() })
         let image = gsap.to(".image",{duration: 7,rotation:720, ease: "bounce", backgroundColor: "#ffffff", boxShadow: '0 0 20px 5px rgba(255, 255, 255, 0.8)'})
         let thumbnail = gsap.to(".img-thumbnail",{opacity: 1, y: 50,repeat: -1, yoyo: true, duration: 2, ease: "bounce",  boxShadow: '0 0 20px 5px rgba(255, 255, 255, 0.8)'})
-        let educations = gsap.to(".education",{ opacity: 0, y: 100, duration: 1, stagger: 0.3 })
-        let experiences = gsap.to(".experience",{ opacity: 0, y: 100, duration: 1, stagger: 0.3 })
+        let educations = gsap.to(".education",{ opacity: 1, y: 100, duration: 1, stagger: 0.3 })
+        let experiences = gsap.to(".experience",{ opacity: 1, y: 100, duration: 1, stagger: 0.3 })
         const words = ["Charith Samarathunga","A Software Engineer"]
 
         let cursor = gsap.to('.cursor', {opacity: 0, ease: "power2.inOut", repeat: -1})
