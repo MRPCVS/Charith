@@ -31,16 +31,16 @@
   touch-action: manipulation;
 }
 
-.education:hover {
+.educations:hover {
   box-shadow: rgba(37, 213, 229, 0.968) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }
 
-.education:focus {
+.educations:focus {
   box-shadow: rgba(43, 107, 236, 0.979) 2px 8px 4px -6px;
 }
 
-.experience {
+.experiences {
 
     align-self: center;
     background-color: #fff;
@@ -72,12 +72,12 @@
     touch-action: manipulation;
   }
   
-  .experience:hover {
+  .experiences:hover {
     box-shadow: rgba(37, 213, 229, 0.968) 2px 8px 8px -5px;
     transform: translate3d(0, 2px, 0);
   }
   
-  .experience:focus {
+  .experiences:focus {
     box-shadow: rgba(43, 107, 236, 0.979) 2px 8px 4px -6px;
   }
 
