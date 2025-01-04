@@ -78,6 +78,9 @@
                     <div class="text-center">
                         <button id="toggleButton" class="educations" >see my education</button>
                     </div>
+                    <div class="text-center">
+                        <button id="toggleButtons" class="experiences" >see my experience</button>
+                    </div>
                 </section>
                 
                 
@@ -201,7 +204,35 @@
         })
 
 
-        
+        // Select the "Experience" button and section
+    const toggleButtons = document.getElementById('toggleButtons');
+    const experience = document.getElementById('experience');
+
+    // Add event listener to the "Experience" button
+    toggleButtons.addEventListener('click', () => {
+        if (experience.style.display === "none" || experience.style.display === "") {
+            // If hidden, display and animate it
+            experience.style.display = "block"; // Ensure it's visible
+            gsap.fromTo(
+                experience,
+                { opacity: 0, y: 100 }, // Initial state
+                { opacity: 1, y: 0, duration: 1, ease: "power2.out" } // Final state
+            );
+            toggleButtons.textContent = "hide my experience"; // Update button text
+        } else {
+            // Animate it out and hide after animation
+            gsap.to(experience, {
+                opacity: 0,
+                y: 100,
+                duration: 1,
+                ease: "power2.in",
+                onComplete: () => {
+                    experience.style.display = "none"; // Hide after animation
+                }
+            });
+            toggleButtons.textContent = "see my experience"; // Update button text
+        }
+    });
         
     </script>
 
