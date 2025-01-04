@@ -75,18 +75,21 @@
                         Currently pursuing a bachelor’s degree in Software Engineering at London Metropolitan University, UK, I’m eager to keep growing and using my skills to create meaningful change in the tech world.
                         
                     </p>
-                    
+                    <div class="text-center">
+                        <button id="toggleButton" class="educations" >see my education</button>
+                    </div>
                 </section>
+                
+                
             </div>
+            
         </div>
-        <div class="text-center">
-            <button id="toggleButton" class="educations" >Education</button>
-        </div>
+        
     </div>
 
     
 
-    <section id="education" class="text-white text-center py-5" style="display: none;">
+    <section id="education" class="text-white text-center py-5 education" style="display: none;">
         <h2>About Me</h2>
         <p>A brief description about you goes here.</p>
     </section>
@@ -115,7 +118,7 @@
         let section = gsap.from("section", { opacity: 0, y: 100, duration: 1, stagger: 0.3, onComplete:()=>masterTl.play() })
         let image = gsap.to(".image",{duration: 7,rotation:720, ease: "bounce", backgroundColor: "#ffffff", boxShadow: '0 0 20px 5px rgba(255, 255, 255, 0.8)'})
         let thumbnail = gsap.to(".img-thumbnail",{opacity: 1, y: 50,repeat: -1, yoyo: true, duration: 2, ease: "bounce",  boxShadow: '0 0 20px 5px rgba(255, 255, 255, 0.8)'})
-
+        let educations = gsap.to(".education",{ opacity: 0, y: 100, duration: 1, stagger: 0.3 })
         const words = ["Charith Samarathunga","A Software Engineer"]
 
         let cursor = gsap.to('.cursor', {opacity: 0, ease: "power2.inOut", repeat: -1})
@@ -128,17 +131,32 @@
             masterTl.add(tl)
         })
 
+        // Select the button and the education section
         const toggleButton = document.getElementById('toggleButton')
         const education = document.getElementById('education')
 
         // Add event listener to the button
         toggleButton.addEventListener('click', () => {
             if (education.style.display === "none" || education.style.display === "") {
-                education.style.display = "block";
-                toggleButton.textContent = "Hide Education"; // Update button text
-            } else {
-                education.style.display = "none";
-                toggleButton.textContent = "Show Education"; // Update button text
+                // If hidden, display and animate it
+                education.style.display = "block";// Ensure it's visible
+                gsap.fromTo(
+            education, 
+            { opacity: 0, y: 100 }, // Initial state
+            { opacity: 1, y: 0, duration: 1, ease: "power2.out" } // Final state
+        );
+                toggleButton.textContent = "hide my education"; // Update button text
+            } else {// Animate it out and hide after animation
+        gsap.to(education, {
+            opacity: 0,
+            y: 100,
+            duration: 1,
+            ease: "power2.in",
+            onComplete: () => {
+                education.style.display = "none"; // Hide after animation
+            }
+        });
+        toggleButton.textContent = "see my education"; // Update button text
             }
         })
         
