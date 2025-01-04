@@ -1,5 +1,5 @@
 /* CSS */
-.educations {
+.education {
 
   align-self: center;
   background-color: #fff;
@@ -31,12 +31,12 @@
   touch-action: manipulation;
 }
 
-.educations:hover {
+.education:hover {
   box-shadow: rgba(37, 213, 229, 0.968) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }
 
-.educations:focus {
+.education:focus {
   box-shadow: rgba(43, 107, 236, 0.979) 2px 8px 4px -6px;
 }
 
@@ -121,7 +121,7 @@ main.row{
 	width: 16px;
 	height: 16px;
 	border-radius: 50%;
-	right: calc(100% + 25px);
+	right: calc(100% + 22px);
 	top: 0;
 	background-color: #11a372;
 	border: 2px solid white;
