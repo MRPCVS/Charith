@@ -2,44 +2,36 @@
 
 /* CSS */
 .educations {
-  appearance: none;
-  background-color: #FFFFFF;
-  border-radius: 40em;
-  border-style: none;
-  box-shadow: #ADCFFF 0 -12px 6px inset;
-  box-sizing: border-box;
-  color: #000000;
-  cursor: pointer;
-  display: inline-block;
-  font-family: -apple-system,sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: -.24px;
-  margin: 0;
-  outline: none;
-  padding: 1rem 1.3rem;
-  quotes: auto;
-  text-align: center;
-  text-decoration: none;
-  transition: all .15s;
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #fff;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#fff 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #fff;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
 
-.educations:hover {
-  background-color: #29f1ffc6;
-  box-shadow: #017d82 0 -6px 8px inset;
-  transform: scale(1.125);
+.educations:hover,
+.educations:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
 }
 
 .educations:active {
-  transform: scale(1.025);
-}
-
-@media (min-width: 768px) {
-  .educations {
-    font-size: 1.5rem;
-    padding: .75rem 2rem;
-  }
+  background: var(--color);
+  color: #000;
 }
