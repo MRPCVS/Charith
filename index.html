@@ -75,8 +75,13 @@
                         Currently pursuing a bachelor’s degree in Software Engineering at London Metropolitan University, UK, I’m eager to keep growing and using my skills to create meaningful change in the tech world.
                         
                     </p>
-                    <div class="text-center">
-                        <button id="toggleButton" class="educations" >see my education</button>
+                    <div class="row ">
+                        <div class="text-center col-6 ">
+                            <button id="toggleButton" class="educations" >see my education</button>
+                        </div>
+                        <div class="text-center col-6">
+                            <button id="toggleButton2" class="experience" >see my experience</button>
+                        </div>
                     </div>
                 </section>
                 
@@ -88,8 +93,8 @@
     </div>
 
     
-    
-    <section id="education" class="text-white text-center py-1 education col align-self-center" style="display: none;">
+    <main class="row px-4">
+    <section id="education" class="text-white text-center  education col align-self-center" style="display: none;">
         <header class="title">
             <h2>Education</h2>
         </header>
@@ -108,8 +113,8 @@
         </div>
     </section>
 
-    <main class="row px-4">
-    <section id="experience" class="text-white text-center col align-self-center ">
+    
+    <section id="experience" class="text-white text-center col align-self-center experience">
         <header class="title">
             <h2>Experience</h2>
         </header>
@@ -197,6 +202,36 @@
             }
         });
         toggleButton.textContent = "see my education"; // Update button text
+            }
+        })
+
+
+        // Select the button and the education section
+        const toggleButton1 = document.getElementById('toggleButton')
+        const experience = document.getElementById('experience')
+
+        // Add event listener to the button
+        toggleButton.addEventListener('click', () => {
+            if (experience.style.display === "none" || experience.style.display === "") {
+                // If hidden, display and animate it
+                experience.style.display = "block";// Ensure it's visible
+                gsap.fromTo(
+            experience, 
+            { opacity: 0, y: 100 }, // Initial state
+            { opacity: 1, y: 0, duration: 1, ease: "power2.out" } // Final state
+        );
+                toggleButton.textContent = "hide my experience"; // Update button text
+            } else {// Animate it out and hide after animation
+        gsap.to(experience, {
+            opacity: 0,
+            y: 100,
+            duration: 1,
+            ease: "power2.in",
+            onComplete: () => {
+                experience.style.display = "none"; // Hide after animation
+            }
+        });
+        toggleButton.textContent = "see my experience"; // Update button text
             }
         })
         
